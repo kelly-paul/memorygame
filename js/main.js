@@ -28,6 +28,7 @@ var checkForMatch = function() {
   alert("You found a match!");
   } else {
   alert("Sorry, try again.");
+  document.location.reload();
   }
 };
 
@@ -39,8 +40,7 @@ var flipCard = function () {
 
 if (cardsInPlay.length === 2) {
     checkForMatch();
-    cardsInPlay = [];
-    }
+  }
 };
 
 var createBoard = function () {
@@ -51,12 +51,6 @@ var createBoard = function () {
     cardElement.addEventListener('click', flipCard);
     document.getElementById('game-board').appendChild(cardElement);
   }
-};
-
-function resetForms() {
-    for (i = 0; i < document.forms.length; i++) {
-        document.forms[i].reset();
-    }
 };
 
 createBoard();
