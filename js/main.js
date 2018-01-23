@@ -22,10 +22,13 @@ var cards = [
 ];
 
 var cardsInPlay = [];
+var score = 0;
 
 var checkForMatch = function() {
   if (cardsInPlay[0] === cardsInPlay[1]) {
   alert("You found a match!");
+  score += 1;
+  document.getElementById('score').innerHTML = score;
   } else {
   alert("Sorry, try again.");
   document.location.reload();
